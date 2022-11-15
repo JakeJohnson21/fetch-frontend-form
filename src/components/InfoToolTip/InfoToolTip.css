@@ -1,0 +1,39 @@
+.modal__background {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(15, 15, 15, 0.6);
+}
+.modal__container {
+  position: relative;
+  border-radius: 10px;
+  margin: auto;
+  visibility: visible;
+
+  width: 500px;
+  height: 300px;
+  z-index: 2;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal__hidden {
+  display: none;
+}
+.modal__close-button {
+  background-image: url(../../images/blackMobileX.svg);
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  position: absolute;
+  border: none;
+  top: -35px;
+  right: -35px;
+}
