@@ -1,7 +1,5 @@
 # Frontend Take-Home Exercise
 
-Created by Jake Johnson
-
 Visit - https://jakejohnson21@github.io/fetch-frontend-form
 
 ### Built using React.js
@@ -52,3 +50,5 @@ Creates the production build of the project.
 ### npm run deploy
 
 Creates the production build of the project and once complete, deploys it to github pages.
+
+Created by Jake Johnson
