@@ -1,0 +1,53 @@
+.heading {
+  margin-top: 5%;
+  font-weight: 400;
+  font-size: 34px;
+  text-align: center;
+  color: rgb(219, 219, 219);
+  transition: all 0.3s 0s linear;
+}
+
+.heading_underline {
+  max-width: 80%;
+  height: 8px;
+  border-radius: 10px;
+  background: rgb(79, 144, 132);
+  background-image: radial-gradient(
+    circle 590px at 8.2% 13.8%,
+    rgb(231, 231, 231) 0%,
+    rgb(190, 190, 190) 90%
+  );
+  border: none;
+  margin: 0px auto 40px;
+  box-shadow: 1px 1px 12px -1px rgb(62, 62, 62, 0.4);
+}
+
+.title {
+  margin: 10px auto 0px;
+  padding-bottom: 15px;
+  text-shadow: 1px 1px 20px rgb(76, 76, 76, 0.4);
+  transition: all 0.3s 0s linear;
+}
+
+.subtitle {
+  margin: auto;
+  color: rgb(226, 226, 226);
+  transition: all 0.3s 0s linear;
+}
+
+@media screen and (max-width: 500px) {
+  .heading {
+    padding-top: 50px;
+  }
+  .title {
+    font-size: 28px;
+    font-weight: 500;
+  }
+  .subtitle {
+    font-weight: 200;
+    font-size: 22px;
+  }
+  .heading_underline {
+    height: 5px;
+  }
+}

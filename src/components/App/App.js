@@ -1,31 +1,29 @@
 import React, { useEffect, useState } from "react";
 import api from "../../utils/api";
 import CreateUserForm from "../CreateUserForm/CreateUserForm";
-import InfoToolTip from "../InfoToolTip/InfoToolTip";
+import Modal from "../Modal/Modal";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 function App() {
   const [occupations, setOccupations] = useState([]);
   const [states, setStates] = useState([]);
-  const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
-  const [modalStatus, setTooltipStatus] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalStatus, setModalStatus] = useState("");
 
-  function handleInfoTooltipOpen() {
-    setIsInfoTooltipOpen(true);
+  function handleModalOpen() {
+    setIsModalOpen(true);
   }
   function handleCloseModal() {
-    setIsInfoTooltipOpen(false);
+    setIsModalOpen(false);
   }
 
   function handleCreateUserSubmit(userData) {
     api
       .postNewUser(userData)
-      .then(() => {
-        setTooltipStatus("success");
-      })
-      .catch(() => {
-        setTooltipStatus("fail");
-      })
-      .finally(() => setIsInfoTooltipOpen(true));
+      .then(() => setModalStatus("success"))
+      .catch(() => setModalStatus("fail"))
+      .finally(() => setIsModalOpen(true));
   }
 
   useEffect(() => {
@@ -40,15 +38,19 @@ function App() {
 
   return (
     <main className="page">
+      <Header />
       <CreateUserForm
+        getByTestId="form"
         occupations={occupations}
         states={states}
         onCreateUserSubmit={handleCreateUserSubmit}
-        infoTooltipOpen={handleInfoTooltipOpen}
+        isModalOpen={handleModalOpen}
       />
-      <InfoToolTip
-        status={tooltipStatus}
-        isOpen={isInfoTooltipOpen}
+      <Footer />
+
+      <Modal
+        status={modalStatus}
+        isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
     </main>

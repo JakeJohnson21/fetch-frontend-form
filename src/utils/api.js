@@ -22,7 +22,7 @@ class Api {
   postNewUser({ name, email, password, occupation, state }) {
     return fetch(`${this._baseUrl}`, {
       method: "POST",
-      headers: this.headers,
+      headers: this._headers,
       body: JSON.stringify({ name, email, password, occupation, state }),
     }).then((res) => this._getResponseData(res));
   }

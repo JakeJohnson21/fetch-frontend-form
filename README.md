@@ -29,6 +29,20 @@ Normalize.css was used to clean up the code.
 Straight forward create user form. All fields must be complete to submit. Each field validates input in real time.
 Occupations and States were fetched from the given api. states name / abbreviation were joined into a single string.
 
-Tooltip appears with either a success or fail message upon submission.
+Modal opens with either a success or fail message upon submission.
 
 Source materials are credited in the footer.
+
+# Running Frontend Take-Home Exercise locally
+
+## npm install
+
+Use to install all dependencies needed to run this application locally.
+
+## npm run start
+
+Start the application locally.
+
+# npm run deploy
+
+Runs the production build of the project and once complete, deploys it to github pages.

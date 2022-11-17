@@ -15,7 +15,6 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
     },
 
     onSubmit: (values) => {
-      //submit form inputs, send data
       onCreateUserSubmit(values);
     },
     validationSchema: userSchema,
@@ -27,118 +26,112 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
 
   return (
     <section className="form__container">
-      <header className="form__heading">
-        <p className="form__subtitle">New here?</p>
-        <h2 className="form__title">Create an account</h2>
-        <hr className="form__heading_underline"></hr>
-      </header>
-
       <form onSubmit={formik.handleSubmit} className="form">
         <fieldset className="fieldset">
-          <input
-            id="name"
-            placeholder="Full Name"
-            type="text"
-            name="name"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            className="form-field input"
-            defaultValue={formik.values.name}
-            noValidate
-          ></input>
-          {formik.touched.name && formik.errors.name && (
-            <span className="form__error">{formik.errors.name}</span>
-          )}
-
-          <input
-            id="email"
-            required
-            type="email"
-            placeholder="Email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            name="email"
-            className="form-field input email__input"
-            defaultValue={formik.values.email}
-            noValidate
-          ></input>
-          {formik.touched.email && formik.errors.email && (
-            <span className="form__error">{formik.errors.email}</span>
-          )}
-
-          <input
-            id="password"
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            className="form-field input"
-            required
-            defaultValue={formik.values.password}
-            noValidate
-          ></input>
-          {formik.touched.password && formik.errors.password && (
-            <span className="form__error">{formik.errors.password}</span>
-          )}
-
-          <select
-            id="occupation"
-            className="form-field select"
-            name="occupation"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            required
-            defaultValue={formik.values.occupation}
-            noValidate
-          >
-            <option
-              selected="selected"
-              disabled
-              value=""
-              className="default__value"
+          <div className="form__item_content">
+            <input
+              id="name"
+              placeholder="Full Name"
+              type="text"
+              name="name"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className="form-field input"
+              defaultValue={formik.values.name}
+            ></input>
+            {formik.touched.name && formik.errors.name && (
+              <span className="form__error">{formik.errors.name}</span>
+            )}
+          </div>
+          <div className="form__item_content">
+            <input
+              id="email"
+              required
+              type="email"
+              placeholder="Email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              name="email"
+              className="form-field input email__input"
+              defaultValue={formik.values.email}
+            ></input>
+            {formik.touched.email && formik.errors.email && (
+              <span className="form__error">{formik.errors.email}</span>
+            )}
+          </div>
+          <div className="form__item_content">
+            <input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className="form-field input"
+              required
+              defaultValue={formik.values.password}
+            ></input>
+            {formik.touched.password && formik.errors.password && (
+              <span className="form__error">{formik.errors.password}</span>
+            )}
+          </div>
+          <div className="form__item_content">
+            <select
+              title="Select your occupation"
+              id="occupation"
+              className="form-field select"
+              name="occupation"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              required
+              defaultValue={formik.values.occupation}
             >
-              Choose occupation
-            </option>
-            {occupations.map((title, index) => (
               <option
-                name="occupation"
-                key={index}
-                className="occupation-title"
+                selected="selected"
+                disabled
+                value=""
+                className="default__value"
               >
-                {title}
+                Select your occupation
               </option>
-            ))}
-          </select>
-          {formik.touched.occupation && formik.errors.occupation && (
-            <span className="form__error">{formik.errors.occupation}</span>
-          )}
-          <select
-            id="state"
-            className="form-field select select__state"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            defaultValue={formik.values.state}
-            required
-            noValidate
-          >
-            <option
-              selected="selected"
-              disabled
-              value=""
-              className="default__value"
+              {occupations.map((title, index) => (
+                <option key={index} className="occupation-title">
+                  {title}
+                </option>
+              ))}
+            </select>
+            {formik.touched.occupation && formik.errors.occupation && (
+              <span className="form__error">{formik.errors.occupation}</span>
+            )}
+          </div>
+          <div className="form__item_content">
+            <select
+              title="Select your State"
+              id="state"
+              className="form-field select select__state"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              defaultValue={formik.values.state}
+              required
             >
-              Select your State
-            </option>
-            {states.map((state, index) => (
-              <option key={index} className="state">
-                {Object.values(state).join(", ")}
+              <option
+                selected="selected"
+                disabled
+                value=""
+                className="default__value"
+              >
+                Select your State
               </option>
-            ))}
-          </select>
-          {formik.touched.state && formik.errors.state && (
-            <span className="form__error">{formik.errors.state}</span>
-          )}
+              {states.map((state, index) => (
+                <option key={index} className="state">
+                  {Object.values(state).join(", ")}
+                </option>
+              ))}
+            </select>
+            {formik.touched.state && formik.errors.state && (
+              <span className="form__error">{formik.errors.state}</span>
+            )}
+          </div>
         </fieldset>
         <button
           className={`submit__button ${
