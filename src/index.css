@@ -7,6 +7,7 @@ body {
 }
 
 @import url(fonts/font.css);
+@import url(vendor/normalize.css);
 @import url(components/App/App.css);
 @import url(components/CreateUserForm/CreateUserForm.css);
 @import url(components/Footer/Footer.css);

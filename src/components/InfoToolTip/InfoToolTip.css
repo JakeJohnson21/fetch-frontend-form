@@ -12,28 +12,89 @@
   border-radius: 10px;
   margin: auto;
   visibility: visible;
-
-  width: 500px;
-  height: 300px;
+  border-top-right-radius: 110px;
+  border-bottom-left-radius: 110px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  width: 600px;
+  height: 400px;
   z-index: 2;
-  background-color: aliceblue;
+  background-color: rgb(91, 187, 200);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 1px 15px 150px 2px rgba(46, 45, 45, 0.6);
 }
 .modal__hidden {
   display: none;
 }
+.modal__text-container{
+position: absolute; 
+left: 60px;
+top: 35%;
+}
+
+
 .modal__close-button {
   background-image: url(../../images/blackMobileX.svg);
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-position: center;
   background-size: cover;
   background-color: transparent;
   position: absolute;
   border: none;
-  top: -35px;
-  right: -35px;
+  top: -20px;
+  right: -20px;
+}
+
+.modal__icon{
+  opacity: .2;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+.modal__message {
+  color: rgb(199, 199, 199);
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.modal__sub-message {
+  color: white;
+  margin-top: 0px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: left;
+}
+.fail-icon{
+  background-image: url("../../vendor/oops__icon.svg");
+  background-position: top;
+  object-position: 20% 70%;
+  position: absolute;
+  bottom: 0px;
+  right: -0px;
+  background-size: cover;
+  width: 450px;
+  height: 350px;
+}
+.modal__success-message{
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  position: relative;
+  right: 20px;
+  bottom: 100px;
+}
+.success-icon{
+  background-image: url("../../vendor/success__icon.svg");
+  position: absolute;
+  bottom: 10px;
+  right: -80px;
+  width: 420px;
+  height: 240px;
+
+
+
 }

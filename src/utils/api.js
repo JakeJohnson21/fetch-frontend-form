@@ -19,14 +19,12 @@ class Api {
     }).then((res) => this._getResponseData(res));
   }
 
-  postNewUser({ userData }) {
+  postNewUser({ name, email, password, occupation, state }) {
     return fetch(`${this._baseUrl}`, {
       method: "POST",
       headers: this.headers,
-      body: JSON.stringify({
-        userData,
-      }),
-    });
+      body: JSON.stringify({ name, email, password, occupation, state }),
+    }).then((res) => this._getResponseData(res));
   }
 }
 

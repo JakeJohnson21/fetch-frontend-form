@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../utils/api";
 import CreateUserForm from "../CreateUserForm/CreateUserForm";
+import Footer from "../Footer/Footer";
 import InfoToolTip from "../InfoToolTip/InfoToolTip";
 
 function App() {
@@ -16,14 +17,15 @@ function App() {
     setIsInfoTooltipOpen(false);
   }
 
-  function handleCreateUserSubmit({ newUserData }) {
+  function handleCreateUserSubmit(userData) {
     api
-      .postNewUser({ newUserData })
-      .then((res) => {
+      .postNewUser(userData)
+      .then(() => {
         setTooltipStatus("success");
         setIsInfoTooltipOpen(true);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error(`Error: ${err.status}`);
         setTooltipStatus("fail");
         setIsInfoTooltipOpen(true);
       });
@@ -38,13 +40,14 @@ function App() {
 
   return (
     <section className="page">
+      <Footer />
       <CreateUserForm
         occupations={occupations}
         states={states}
         onCreateUserSubmit={handleCreateUserSubmit}
         infoTooltipOpen={handleInfoTooltipOpen}
       />
-      <InfoToolTip
+        <InfoToolTip
         status={tooltipStatus}
         isOpen={isInfoTooltipOpen}
         onClose={handleCloseModal}
