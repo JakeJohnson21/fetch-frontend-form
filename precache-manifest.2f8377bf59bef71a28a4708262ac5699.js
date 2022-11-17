@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "117922ef74928f6c7da7",
-    "url": "/fetch-frontend-form/static/css/main.68ea812a.chunk.css"
+    "revision": "fadb82c1cb463a66ea18",
+    "url": "/fetch-frontend-form/static/css/main.aa11dcb5.chunk.css"
   },
   {
-    "revision": "117922ef74928f6c7da7",
-    "url": "/fetch-frontend-form/static/js/main.f2f4a00a.chunk.js"
+    "revision": "fadb82c1cb463a66ea18",
+    "url": "/fetch-frontend-form/static/js/main.866c962c.chunk.js"
   },
   {
     "revision": "39dd890717e38a3c3dae",
@@ -28,6 +28,10 @@ self.__precacheManifest = [
     "url": "/fetch-frontend-form/static/media/double__arrow.d695df67.svg"
   },
   {
+    "revision": "c0638bea87a05fdfa2bb3bba2efe54e4",
+    "url": "/fetch-frontend-form/static/media/Inter-Medium.c0638bea.woff"
+  },
+  {
     "revision": "8932b6155e84031df85c6ace8d0e25e2",
     "url": "/fetch-frontend-form/static/media/oops__icon.8932b615.svg"
   },
@@ -36,23 +40,19 @@ self.__precacheManifest = [
     "url": "/fetch-frontend-form/static/media/success__icon.250a500a.svg"
   },
   {
-    "revision": "ec62b2d23c20d67abf3f026ea2fb81fd",
-    "url": "/fetch-frontend-form/static/media/blackMobileX.ec62b2d2.svg"
+    "revision": "dd19efda9c6e88ad83a5b052915899f7",
+    "url": "/fetch-frontend-form/static/media/Inter-ExtraLight.dd19efda.woff"
   },
   {
     "revision": "99a0d9a7e4c99c17bfdd94a22a5cf94e",
     "url": "/fetch-frontend-form/static/media/Inter-Bold.99a0d9a7.woff"
   },
   {
-    "revision": "c0638bea87a05fdfa2bb3bba2efe54e4",
-    "url": "/fetch-frontend-form/static/media/Inter-Medium.c0638bea.woff"
+    "revision": "ec62b2d23c20d67abf3f026ea2fb81fd",
+    "url": "/fetch-frontend-form/static/media/blackMobileX.ec62b2d2.svg"
   },
   {
-    "revision": "dd19efda9c6e88ad83a5b052915899f7",
-    "url": "/fetch-frontend-form/static/media/Inter-ExtraLight.dd19efda.woff"
-  },
-  {
-    "revision": "374b6e1d33239ec7d2b593b90ce0a5ce",
+    "revision": "0de6b2c96d81be132ddf63acbbb7933a",
     "url": "/fetch-frontend-form/index.html"
   }
 ];
