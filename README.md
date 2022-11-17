@@ -1,6 +1,6 @@
 # Frontend Take-Home Exercise
 
-Visit - https://jakejohnson21@github.io/fetch-frontend-form
+Visit - https://jakejohnson21.github.io/fetch-frontend-form
 
 ### Built using React.js
 
