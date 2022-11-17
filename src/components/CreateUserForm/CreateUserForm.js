@@ -1,29 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import { userSchema } from "../../utils/userSchema";
 
 function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
   const formik = useFormik({
     initialValues: {
+      // state values
+
       name: "",
       email: "",
       password: "",
       occupation: "",
       state: "",
     },
+
     onSubmit: (values) => {
+      //submit form inputs, send data
       onCreateUserSubmit(values);
     },
     validationSchema: userSchema,
   });
 
+  useEffect(() => {
+    formik.validateForm();
+  }, []);
+
   return (
     <section className="form__container">
-      <div className="form__heading">
+      <header className="form__heading">
         <p className="form__subtitle">New here?</p>
         <h2 className="form__title">Create an account</h2>
         <hr className="form__heading_underline"></hr>
-      </div>
+      </header>
 
       <form onSubmit={formik.handleSubmit} className="form">
         <fieldset className="fieldset">
@@ -34,7 +42,7 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
             name="name"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="form-field input name__input"
+            className="form-field input"
             defaultValue={formik.values.name}
             noValidate
           ></input>
@@ -65,7 +73,7 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
             placeholder="Password"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="form-field input password__input"
+            className="form-field input"
             required
             defaultValue={formik.values.password}
             noValidate
@@ -76,7 +84,7 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
 
           <select
             id="occupation"
-            className="form-field select select__occupation"
+            className="form-field select"
             name="occupation"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -84,7 +92,12 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
             defaultValue={formik.values.occupation}
             noValidate
           >
-            <option selected="selected" disabled value="" className="default__value">
+            <option
+              selected="selected"
+              disabled
+              value=""
+              className="default__value"
+            >
               Choose occupation
             </option>
             {occupations.map((title, index) => (
@@ -109,7 +122,12 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
             required
             noValidate
           >
-            <option selected="selected" disabled value="" className="default__value">
+            <option
+              selected="selected"
+              disabled
+              value=""
+              className="default__value"
+            >
               Select your State
             </option>
             {states.map((state, index) => (
@@ -123,15 +141,25 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
           )}
         </fieldset>
         <button
-          className={`submit__button ${formik.isValid ? "submit__button_valid":""}`}
+          className={`submit__button ${
+            formik.isValid ? "submit__button_valid" : ""
+          }`}
           type="submit"
           disabled={!formik.isValid}
         >
-        <span className={`${formik.isValid ? "submit__button_icon": ""}`}></span>
-        <span className={`${formik.isValid ? "submit__button_background":""}`}></span>
-          <span className={`submit__button_text ${formik.isValid ? "submit__button_valid": "submit__invalid"}`}>Create account
+          <span
+            className={`${formik.isValid ? "submit__button_icon" : ""}`}
+          ></span>
+          <span
+            className={`${formik.isValid ? "submit__button_background" : ""}`}
+          ></span>
+          <span
+            className={`submit__button_text ${
+              formik.isValid ? "submit__button_valid" : "submit__invalid"
+            }`}
+          >
+            Create account
           </span>
-
         </button>
       </form>
     </section>

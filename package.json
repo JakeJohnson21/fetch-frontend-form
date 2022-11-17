@@ -2,6 +2,7 @@
   "name": "fetch-frontend-take-home",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jakejohnson21.github.io/fetch-frontend-form",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -17,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "react-test-renderer": "^18.2.0"
   }
 }

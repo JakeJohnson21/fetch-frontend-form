@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import api from "../../utils/api";
 import CreateUserForm from "../CreateUserForm/CreateUserForm";
-import Footer from "../Footer/Footer";
 import InfoToolTip from "../InfoToolTip/InfoToolTip";
 
 function App() {
   const [occupations, setOccupations] = useState([]);
   const [states, setStates] = useState([]);
   const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
-  const [tooltipStatus, setTooltipStatus] = useState("");
+  const [modalStatus, setTooltipStatus] = useState("");
 
   function handleInfoTooltipOpen() {
     setIsInfoTooltipOpen(true);
@@ -22,37 +21,37 @@ function App() {
       .postNewUser(userData)
       .then(() => {
         setTooltipStatus("success");
-        setIsInfoTooltipOpen(true);
       })
-      .catch((err) => {
-        console.error(`Error: ${err.status}`);
+      .catch(() => {
         setTooltipStatus("fail");
-        setIsInfoTooltipOpen(true);
-      });
+      })
+      .finally(() => setIsInfoTooltipOpen(true));
   }
 
   useEffect(() => {
-    api.getFormOptions().then((data) => {
-      setOccupations(data.occupations);
-      setStates(data.states);
-    });
+    api
+      .getFormOptions()
+      .then((data) => {
+        setOccupations(data.occupations);
+        setStates(data.states);
+      })
+      .catch((err) => console.error(`Error: ${err.status}`));
   }, []);
 
   return (
-    <section className="page">
-      <Footer />
+    <main className="page">
       <CreateUserForm
         occupations={occupations}
         states={states}
         onCreateUserSubmit={handleCreateUserSubmit}
         infoTooltipOpen={handleInfoTooltipOpen}
       />
-        <InfoToolTip
+      <InfoToolTip
         status={tooltipStatus}
         isOpen={isInfoTooltipOpen}
         onClose={handleCloseModal}
       />
-    </section>
+    </main>
   );
 }
 
