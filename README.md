@@ -33,16 +33,20 @@ Modal opens with either a success or fail message upon submission.
 
 Source materials are credited in the footer.
 
-# Running Frontend Take-Home Exercise locally
+## Running Frontend Take-Home Exercise locally
 
-## npm install
+### npm install
 
-Use to install all dependencies needed to run this application locally.
+Install all dependencies needed to run this application locally.
 
-## npm run start
+### npm run start
 
 Start the application locally.
 
-# npm run deploy
+### npm run build
 
-Runs the production build of the project and once complete, deploys it to github pages.
+Creates the production build of the project.
+
+### npm run deploy
+
+Creates the production build of the project and once complete, deploys it to github pages.

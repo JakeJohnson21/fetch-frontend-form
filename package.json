@@ -17,10 +17,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --coverage",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d build",
-    "prebuild": "npm run "
+    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
