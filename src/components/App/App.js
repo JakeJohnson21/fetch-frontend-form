@@ -30,10 +30,11 @@ function App() {
     api
       .getFormOptions()
       .then((data) => {
+        setIsModalOpen(false);
         setOccupations(data.occupations);
         setStates(data.states);
       })
-      .catch((err) => console.error(`Error: ${err.status}`));
+      .catch(() => setModalStatus("load"), setIsModalOpen(true));
   }, []);
 
   return (

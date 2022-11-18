@@ -4,7 +4,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgb(15, 15, 15, 0.7);
-  z-index: 1;
+  z-index: 2;
   cursor: pointer;
 }
 .modal__container {
@@ -23,6 +23,11 @@
   justify-content: center;
   align-items: center;
   box-shadow: 1px 15px 150px 2px rgba(46, 45, 45, 0.6);
+}
+.modal__text-container {
+  position: absolute;
+  left: 60px;
+  top: 35%;
 }
 .modal__fail_container {
   position: absolute;
@@ -54,13 +59,44 @@
   border-top-left-radius: 16px;
   border-bottom-right-radius: 16px;
 }
-.modal__hidden {
+.modal__load-error_container {
+  position: absolute;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(111, 111, 219, 1) 0%,
+    rgba(182, 109, 246, 1) 72.4%
+  );
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 110px;
+  border-bottom-left-radius: 110px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.modal__load-error_container .modal__message::before {
   display: none;
 }
-.modal__text-container {
-  position: absolute;
-  left: 60px;
-  top: 35%;
+.modal__load-error_text {
+  position: relative;
+  top: 90px;
+  left: 70px;
+  font-size: 26px;
+  width: 260px;
+  line-height: 1.4;
+  text-align: center;
+}
+.modal__load-error_container .modal__message {
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+.modal__load-error_container .modal__sub-message {
+  font-weight: 700;
+}
+
+.modal__hidden {
+  display: none;
 }
 
 .modal__close-button {
