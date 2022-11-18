@@ -95,9 +95,7 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
                 Select your occupation
               </option>
               {occupations.map((title, index) => (
-                <option key={index} className="occupation-title">
-                  {title}
-                </option>
+                <option key={index}>{title}</option>
               ))}
             </select>
             {formik.touched.occupation && formik.errors.occupation && (

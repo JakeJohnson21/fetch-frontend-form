@@ -2,8 +2,13 @@ body {
   margin: 0;
   padding: 0;
 }
+button,
+select {
+  cursor: pointer;
+}
 * {
   font-family: "Inter", sans-serif;
+  transition: all 0.3s 0s linear;
 }
 
 @import url(fonts/font.css);

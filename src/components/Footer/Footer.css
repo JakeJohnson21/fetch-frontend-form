@@ -90,7 +90,7 @@
 
 @media screen and (max-width: 580px) {
   .footer {
-    height: 200px;
+    height: 360px;
   }
   .footer__content {
     flex-direction: column;
@@ -109,5 +109,10 @@
     font-size: 14px;
     width: unset;
     max-width: unset;
+  }
+}
+@media screen and (max-width: 500px) {
+  .footer {
+    height: 200px;
   }
 }

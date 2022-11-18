@@ -51,7 +51,6 @@
     rgba(0, 175, 255, 1) 27.9%,
     rgba(0, 224, 254, 1) 84.2%
   );
-
   width: 100%;
   height: 100%;
   border-top-right-radius: 110px;
@@ -110,11 +109,9 @@
   border: none;
   top: -20px;
   right: -20px;
-  transition: all 0.3s 0s linear;
 }
 .modal__close-button:hover {
   opacity: 0.6;
-  transition: all 0.3s 0s linear;
 }
 
 .modal__icon {
@@ -173,4 +170,112 @@
   right: -130px;
   width: 420px;
   height: 240px;
+}
+
+@media screen and (max-width: 800px) {
+  .modal__container,
+  .modal__load-error_container,
+  .modal__success_container,
+  .modal__fail_container {
+    width: 80vw;
+    height: 280px;
+    border-top-right-radius: 70px;
+    border-bottom-left-radius: 70px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .modal__load-error_container .modal__message {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+  .modal__message {
+    color: rgb(233, 233, 233);
+    font-size: 16px;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  .modal__sub-message {
+    color: white;
+    margin-top: 0px;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: left;
+  }
+  .modal__success-message {
+    font-size: 24px;
+    font-weight: 300;
+    width: 50px;
+    line-height: 2;
+    color: white;
+    position: relative;
+    z-index: 5;
+    right: -80px;
+    bottom: -40px;
+  }
+  .modal__load-error_text {
+    position: relative;
+    top: 40px;
+    left: 70px;
+    font-size: 26px;
+    width: 260px;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .modal__close-button {
+    right: 0;
+    top: -50px;
+  }
+  .fail-icon {
+    height: 250px;
+    width: 330px;
+  }
+  .success-icon {
+    height: 240px;
+    width: 240px;
+    right: 30px;
+    bottom: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .modal__message::before {
+    content: "Oops.";
+    font-size: 28px;
+    font-weight: 700;
+    padding-right: 8px;
+    position: absolute;
+    top: -30px;
+  }
+  .success-icon {
+    background-image: url("../../images/success__icon.svg");
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    width: 190px;
+    height: 190px;
+  }
+  .modal__success-message {
+    left: 40px;
+  }
+  .fail-icon {
+    width: 250px;
+    height: 190px;
+  }
+  .modal__load-error_container .modal__message,
+  .modal__sub-message {
+    width: 200px;
+    font-size: 14px;
+  }
+  .modal__load-error_text {
+    left: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .modal__container,
+  .modal__load-error_container,
+  .modal__success_container,
+  .modal__fail_container {
+    width: 100vw;
+  }
 }
