@@ -1,7 +1,7 @@
 {
   "main.css": "/fetch-frontend-form/static/css/main.978f1a25.chunk.css",
-  "main.js": "/fetch-frontend-form/static/js/main.dc818454.chunk.js",
-  "main.js.map": "/fetch-frontend-form/static/js/main.dc818454.chunk.js.map",
+  "main.js": "/fetch-frontend-form/static/js/main.10f9a2e4.chunk.js",
+  "main.js.map": "/fetch-frontend-form/static/js/main.10f9a2e4.chunk.js.map",
   "runtime~main.js": "/fetch-frontend-form/static/js/runtime~main.cc5db48e.js",
   "runtime~main.js.map": "/fetch-frontend-form/static/js/runtime~main.cc5db48e.js.map",
   "static/js/2.7489c444.chunk.js": "/fetch-frontend-form/static/js/2.7489c444.chunk.js",
@@ -9,7 +9,7 @@
   "static/js/3.be57d0b6.chunk.js": "/fetch-frontend-form/static/js/3.be57d0b6.chunk.js",
   "static/js/3.be57d0b6.chunk.js.map": "/fetch-frontend-form/static/js/3.be57d0b6.chunk.js.map",
   "index.html": "/fetch-frontend-form/index.html",
-  "precache-manifest.000c3c4750ca98bcdcef56909905131d.js": "/fetch-frontend-form/precache-manifest.000c3c4750ca98bcdcef56909905131d.js",
+  "precache-manifest.38f9f19cd53bb02c097adeeb9fe6083b.js": "/fetch-frontend-form/precache-manifest.38f9f19cd53bb02c097adeeb9fe6083b.js",
   "service-worker.js": "/fetch-frontend-form/service-worker.js",
   "static/css/main.978f1a25.chunk.css.map": "/fetch-frontend-form/static/css/main.978f1a25.chunk.css.map",
   "static/media/index.css": "/fetch-frontend-form/static/media/success__icon.250a500a.svg"
