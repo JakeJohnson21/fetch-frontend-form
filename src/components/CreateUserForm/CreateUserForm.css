@@ -93,7 +93,7 @@
   width: 100%;
   display: flex;
   position: relative;
-  flex-direction: column-reverse;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 .form__error {
@@ -107,11 +107,6 @@
 .select {
   text-align: left;
   width: 100%;
-}
-
-.select__default {
-  text-align: left;
-  margin-left: 20px;
 }
 
 /* Submit button | text | background  */

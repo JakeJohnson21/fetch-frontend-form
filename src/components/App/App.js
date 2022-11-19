@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import api from "../../utils/api";
-import CreateUserForm from "../CreateUserForm/CreateUserForm";
 import Modal from "../Modal/Modal";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import CreateUserForm from "../CreateUserForm/CreateUserForm";
 
 function App() {
   const [occupations, setOccupations] = useState([]);
@@ -11,9 +11,6 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalStatus, setModalStatus] = useState("");
 
-  function handleModalOpen() {
-    setIsModalOpen(true);
-  }
   function handleCloseModal() {
     setIsModalOpen(false);
   }
@@ -41,14 +38,11 @@ function App() {
     <main className="page">
       <Header />
       <CreateUserForm
-        getByTestId="form"
         occupations={occupations}
         states={states}
         onCreateUserSubmit={handleCreateUserSubmit}
-        isModalOpen={handleModalOpen}
       />
       <Footer />
-
       <Modal
         status={modalStatus}
         isOpen={isModalOpen}
