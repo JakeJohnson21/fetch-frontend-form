@@ -66,7 +66,7 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
                   className="form-field select"
                   as="select"
                   name="occupation"
-                  value=""
+                  defaultValue=""
                 >
                   <option selected="selected" disabled value="">
                     Select your occupation
@@ -86,7 +86,7 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
                   className="form-field select"
                   as="select"
                   name="state"
-                  value=""
+                  defaultValue=""
                 >
                   <option selected="selected" disabled value="">
                     Select your State
