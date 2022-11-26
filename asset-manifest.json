@@ -1,5 +1,5 @@
 {
-  "main.css": "/fetch-frontend-form/static/css/main.680db6bf.chunk.css",
+  "main.css": "/fetch-frontend-form/static/css/main.9b78c2e7.chunk.css",
   "main.js": "/fetch-frontend-form/static/js/main.03cfc3f1.chunk.js",
   "main.js.map": "/fetch-frontend-form/static/js/main.03cfc3f1.chunk.js.map",
   "runtime~main.js": "/fetch-frontend-form/static/js/runtime~main.cc5db48e.js",
@@ -9,8 +9,8 @@
   "static/js/3.be57d0b6.chunk.js": "/fetch-frontend-form/static/js/3.be57d0b6.chunk.js",
   "static/js/3.be57d0b6.chunk.js.map": "/fetch-frontend-form/static/js/3.be57d0b6.chunk.js.map",
   "index.html": "/fetch-frontend-form/index.html",
-  "precache-manifest.57e96259debe52af0be35299fd7587bf.js": "/fetch-frontend-form/precache-manifest.57e96259debe52af0be35299fd7587bf.js",
+  "precache-manifest.17d25e1d708f5c0d3f989eb46581976a.js": "/fetch-frontend-form/precache-manifest.17d25e1d708f5c0d3f989eb46581976a.js",
   "service-worker.js": "/fetch-frontend-form/service-worker.js",
-  "static/css/main.680db6bf.chunk.css.map": "/fetch-frontend-form/static/css/main.680db6bf.chunk.css.map",
+  "static/css/main.9b78c2e7.chunk.css.map": "/fetch-frontend-form/static/css/main.9b78c2e7.chunk.css.map",
   "static/media/index.css": "/fetch-frontend-form/static/media/success__icon.250a500a.svg"
 }
