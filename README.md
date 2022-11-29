@@ -51,4 +51,12 @@ Creates the production build of the project.
 
 Creates the production build of the project and once complete, deploys it to github pages.
 
+## Update 11/28/22
+
+Broke form input elements into separate components - TextInput, SelectInput, and SubmitButton.
+
+Submit button cannot be multi-clicked using CSS and resetForm().
+
+Labels added to each input for better accessibility.
+
 Created by Jake Johnson
