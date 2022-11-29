@@ -55,7 +55,7 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
               <SelectInput
                 placeholder="occupation"
                 id="occupationInput"
-                name="occupation"
+                name="Occupation"
                 occupation={occupations}
               >
                 Occupation
@@ -63,7 +63,7 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
               <SelectInput
                 placeholder="Select"
                 id="stateInput"
-                name="state"
+                name="State"
                 state={states}
               >
                 State

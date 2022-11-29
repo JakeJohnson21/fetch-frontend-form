@@ -57,7 +57,7 @@
 }
 .form__label {
   position: absolute;
-  color: rgba(85, 207, 175, 0.5);
+  color: rgba(164, 207, 195, 0.6);
   transition: all 0.2s linear;
 
   display: block;
