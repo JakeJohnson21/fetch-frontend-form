@@ -55,8 +55,8 @@ Creates the production build of the project and once complete, deploys it to git
 
 Broke form input elements into separate components - TextInput, SelectInput, and SubmitButton.
 
-Submit button cannot be multi-clicked using CSS and resetForm().
+Submit button cannot be multi-clicked. Implemented using CSS and resetForm().
 
-Labels added to each input for better accessibility.
+Labels added to each input for improved accessibility.
 
 Created by Jake Johnson
