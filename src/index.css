@@ -17,4 +17,7 @@ select {
 @import url(components/CreateUserForm/CreateUserForm.css);
 @import url(components/Modal/Modal.css);
 @import url(components/Footer/Footer.css);
+@import url(components/SelectInput/SelectInput.css);
+@import url(components/TextInput/TextInput.css);
+@import url(components/SubmitButton/SubmitButton.css);
 @import url(components/Header/Header.css);

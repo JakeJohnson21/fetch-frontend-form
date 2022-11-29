@@ -1,12 +1,16 @@
 import React from "react";
-import { Field, ErrorMessage, Formik, Form } from "formik";
+import { Formik, Form } from "formik";
 import { userSchema } from "../../utils/userSchema";
+import TextInput from "../TextInput/TextInput";
+import SelectInput from "../SelectInput/SelectInput";
+import SubmitButton from "../SubmitButton/SubmitButton";
 
 function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
   return (
     <div className="form__container">
       <Formik
         initialValues={{
+          // input values initially blank
           name: "",
           email: "",
           password: "",
@@ -15,115 +19,57 @@ function CreateUserForm({ occupations, states, onCreateUserSubmit }) {
         }}
         onSubmit={(values, { resetForm }) => {
           onCreateUserSubmit(values);
+          // Fomrik resetForm() prop. reset form on submit
           resetForm();
         }}
         validationSchema={userSchema}
       >
         {({ isValid }) => (
+          // Formik isValid prop, returns true if there are no errors
           <Form className="form">
             <fieldset className="fieldset">
-              <div className="form__item_content">
-                <Field
-                  placeholder="Full Name"
-                  className="form-field"
-                  name="name"
-                  type="text"
-                />
-                <ErrorMessage
-                  className="form__error"
-                  component="span"
-                  name="name"
-                />
-              </div>
-              <div className="form__item_content">
-                <Field
-                  placeholder="Email"
-                  className="form-field"
-                  name="email"
-                  type="email"
-                />
-                <ErrorMessage
-                  className="form__error"
-                  component="span"
-                  name="email"
-                />
-              </div>
-              <div className="form__item_content">
-                <Field
-                  placeholder="Password"
-                  className="form-field"
-                  name="password"
-                  type="password"
-                />
-                <ErrorMessage
-                  className="form__error"
-                  component="span"
-                  name="password"
-                />
-              </div>
-              <div className="form__item_content">
-                <Field
-                  className="form-field select"
-                  as="select"
-                  name="occupation"
-                  defaultValue=""
-                >
-                  <option selected="selected" disabled value="">
-                    Select your occupation
-                  </option>
-                  {occupations.map((title, index) => (
-                    <option key={index}>{title}</option>
-                  ))}
-                </Field>
-                <ErrorMessage
-                  className="form__error"
-                  component="span"
-                  name="occupation"
-                />
-              </div>
-              <div className="form__item_content">
-                <Field
-                  className="form-field select"
-                  as="select"
-                  name="state"
-                  defaultValue=""
-                >
-                  <option selected="selected" disabled value="">
-                    Select your State
-                  </option>
-                  {states.map((state, index) => (
-                    <option key={index} className="state">
-                      {Object.values(state).join(", ")}
-                    </option>
-                  ))}
-                </Field>
-                <ErrorMessage
-                  className="form__error"
-                  component="span"
-                  name="state"
-                />
-              </div>
-            </fieldset>
-
-            <button
-              className={`submit__button ${
-                isValid ? "submit__button_valid" : ""
-              }`}
-            >
-              <span
-                className={`${isValid ? "submit__button_icon" : ""}`}
-              ></span>
-              <span
-                className={`${isValid ? "submit__button_background" : ""}`}
-              ></span>
-              <span
-                className={`submit__button_text ${
-                  isValid ? "submit__button_valid" : "submit__invalid"
-                }`}
+              <TextInput
+                placeholder="Full Name"
+                id="nameInput"
+                name="name"
+                type="text"
               >
-                Create account
-              </span>
-            </button>
+                Full Name
+              </TextInput>
+              <TextInput
+                placeholder="Email"
+                id="emailInput"
+                name="email"
+                type="email"
+              >
+                Email
+              </TextInput>
+              <TextInput
+                placeholder="Password"
+                id="passwordInput"
+                name="password"
+                type="password"
+              >
+                Password
+              </TextInput>
+              <SelectInput
+                placeholder="occupation"
+                id="occupationInput"
+                name="occupation"
+                occupation={occupations}
+              >
+                Occupation
+              </SelectInput>
+              <SelectInput
+                placeholder="Select"
+                id="stateInput"
+                name="state"
+                state={states}
+              >
+                State
+              </SelectInput>
+            </fieldset>
+            <SubmitButton type="submit" isValid={isValid}></SubmitButton>
           </Form>
         )}
       </Formik>

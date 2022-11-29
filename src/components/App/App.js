@@ -10,6 +10,7 @@ function App() {
   const [states, setStates] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalStatus, setModalStatus] = useState("");
+  const [buttonIsClicked, setButtonIsClicked] = useState(false);
 
   function handleCloseModal() {
     setIsModalOpen(false);
@@ -18,8 +19,17 @@ function App() {
   function handleCreateUserSubmit(userData) {
     api
       .postNewUser(userData)
-      .then(() => setModalStatus("success"))
-      .catch(() => setModalStatus("fail"))
+      // POST successful
+      .then(() => {
+        setButtonIsClicked(true);
+        setModalStatus("success");
+      })
+      // POST fail
+      .catch(() => {
+        setButtonIsClicked(true);
+        setModalStatus("fail");
+      })
+      // Either way open modal
       .finally(() => setIsModalOpen(true));
   }
 
@@ -27,10 +37,12 @@ function App() {
     api
       .getFormOptions()
       .then((data) => {
+        // GET states / occupations
         setIsModalOpen(false);
         setOccupations(data.occupations);
         setStates(data.states);
       })
+      // Modal only opens if cannot GET
       .catch(() => setModalStatus("load"), setIsModalOpen(true));
   }, []);
 
@@ -40,6 +52,7 @@ function App() {
       <CreateUserForm
         occupations={occupations}
         states={states}
+        buttonClicked={buttonIsClicked}
         onCreateUserSubmit={handleCreateUserSubmit}
       />
       <Footer />
